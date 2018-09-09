@@ -54,7 +54,7 @@ public class Main {
 
                   ArrayList<String> output = new ArrayList<>();
                   while (rs.next()) {
-                    output.add("Read from DB: " + rs.getTimestamp("tick"));
+                    output.add("'tick' from DB: " + rs.getTimestamp("tick"));
                   }
                   Map<String, Object> attributes = new HashMap<>();
                   attributes.put("results", output);
