@@ -39,8 +39,9 @@ public class Main {
 
             .get("hello", ctx -> {
               RelativisticModel.select();
-              Amount<Mass> m = Amount.valueOf("12 GeV").to(KILOGRAM);
-              ctx.render("E=mc^2: 12 GeV = " + m.toString());
+              String energy = System.getenv("ENERGY");
+              Amount<Mass> m = Amount.valueOf(energy).to(KILOGRAM);
+              ctx.render("E=mc^2: " + energy + " = " + m.toString());
             })
 
             .get("db", ctx -> {
